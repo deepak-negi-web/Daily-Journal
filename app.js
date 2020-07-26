@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -9,7 +10,7 @@ const contactContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 const app = express();
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://admin-deepak:deepak991027@cluster0-c3lz9.mongodb.net/blogDB", {
+mongoose.connect(process.env.DB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
